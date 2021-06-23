@@ -1,0 +1,113 @@
+/* modal */
+.modal-container {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  z-index: 10;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 70%;
+  height: 100%;
+  overflow-x: auto;
+  
+
+}
+
+.modal-container:target {
+  display: flex;
+}
+
+.modal {
+  width: 100%;
+  border-radius: 10px;
+
+  color: rgb(154, 160, 166);
+  background-color: rgb(48, 49, 52);
+  position: relative;
+}
+
+.modal__title {
+  font-size: 35px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.modal__text {
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.modal__btn {
+  background-color: rgb(32, 33, 36);
+  color: rgb(154, 160, 166);
+  border: none;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px;
+  transition: .2s;
+}
+.modal__select-user{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  background-color: rgb(48, 49, 52);
+  border: solid 1px rgb(154, 160, 166);
+  border-radius: 10px;
+  color: rgb(154, 160, 166);
+}
+.modal__movie-input{
+  width: 70%;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgb(48, 49, 52);
+  border: solid 1px rgb(154, 160, 166);
+  border-radius: 10px;
+  color: rgb(154, 160, 166);
+}
+.modal__user-input{
+  width: 70%;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgb(48, 49, 52);
+  border: solid 1px rgb(154, 160, 166);
+  border-radius: 10px;
+  color: rgb(154, 160, 166);
+}
+
+/* link-... */
+.modal__btn-close {
+  color: inherit;
+  font-size: 35px;
+
+  position: absolute;
+  top: 1px;
+  right: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__btn-close:hover{
+  cursor: pointer;
+}
+
+.modal__btn-close::before {
+  content: '×';
+}
+
+#editMovie{
+  display: none;
+}
+
+#rentMovie{
+  display: none;
+}
+
+#editUser{
+  display: none;
+}

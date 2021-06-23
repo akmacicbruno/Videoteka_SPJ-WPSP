@@ -1,0 +1,331 @@
+html{
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background-color: rgb(32, 33, 36);
+    color: rgb(154, 160, 166);
+    margin: 0;
+    padding: 0;
+    width:100%;
+    height:100vh;
+}
+.navbar__currentuser{
+    text-align: center;
+    color: white !important;
+}
+.navbar__currentuser:hover{
+    color: white !important;
+}
+.navbar{
+    position: relative;
+    display: flex;
+}
+.sidenav__icon{
+    margin: 10px;
+    cursor: pointer;
+    font-size: 48px;
+}
+.sidenav__text{
+    display: inline-flex;
+    margin-top: 11px;
+    font-size: 35px;
+}
+.navbar__dropdown__usericon{
+    display: inline-flex;
+    position: absolute;
+    right: 10px;
+    font-size: 48px;
+    cursor: pointer;
+}
+.navbar__dropdown{
+    display: inline-flex;
+    position: absolute;
+    right: 10px;
+    margin: 10px;
+}
+.navbar__dropdown__content {
+    display: none;
+    position: absolute;
+    right: 10px;
+    margin-top: 45px;
+    background-color: rgb(48, 49, 52);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.navbar__dropdown__content a {
+    color: rgb(154, 160, 166);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} 
+.navbar__dropdown__content a:hover {
+    color: #f1f1f1;
+}
+.navbar__dropdown:hover .navbar__dropdown__content {
+    display: block;
+} 
+.navbar__dropdown:hover .navbar__dropdown__btn {
+    color: white;
+}
+.img{
+    width: 100%;
+    height: 500px;
+    opacity: 0.4;
+}
+.main__title{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;;
+}
+.site-title{
+    text-align: center;
+}
+/* prikaz filmova na početnoj stranici */
+.container__table-available-movies{
+    border-collapse: collapse;
+    width: 100%;
+}
+.container__table-available-movies td, .container__table-available-movies th {
+    border: 1px solid rgb(154, 160, 166);
+    padding: 8px;
+}
+.container__table-available-movies tr:hover {
+    background-color: rgb(48, 49, 52) ;
+}
+
+.container__table-available-movies th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(154, 160, 166);
+  color: rgb(32, 33, 36);
+}
+.container__table-available-movies-search{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10%;
+    text-align: center;
+    float: right;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
+.container__table-available-movies-search__genres{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: right;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
+::placeholder {
+    color: rgb(32, 33, 36);
+    opacity: 0.7;
+  }
+/* dodaj korisnika */
+.form-user{
+    padding: 20px;
+    text-align: center;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+.user-input{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
+.user-btn{
+    background-color: rgb(154, 160, 166);
+    color: rgb(32, 33, 36);
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* dodaj film */
+.form-movie{
+    padding: 20px;
+    text-align: center;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+.movie-input{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
+.movie-btn{
+    background-color: rgb(154, 160, 166);
+    color: rgb(32, 33, 36);
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* ispis svih korisnika - users.php */
+.container__table-users-search{
+    margin-bottom: 10px;
+    margin-right: 10%;
+    font-size: 20px;
+    text-align: center;
+    float: right;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
+.container{
+    margin: auto;
+    width: 80%;
+    padding-bottom: 36px;
+}
+.container__table-users{
+    border-collapse: collapse;
+    width: 100%;
+}
+.container__table-users td, .container__table-users th {
+    border: 1px solid rgb(154, 160, 166);
+    padding: 8px;
+}
+.container__table-users tr:hover {
+    background-color: rgb(48, 49, 52);
+}
+
+.container__table-users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(154, 160, 166);
+  color: rgb(32, 33, 36);
+}
+
+/* ispis posuđenih filmova - rented_movies.php */
+.container__table-movies-search{
+    margin-bottom: 10px;
+    margin-right: 10%;
+    font-size: 20px;
+    text-align: center;
+    float: right;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
+.container__table-movies{
+    border-collapse: collapse;
+    width: 100%;
+}
+.container__table-movies td, .container__table-movies th {
+    border: 1px solid rgb(154, 160, 166);
+    padding: 8px;
+}
+.container__table-movies tr:hover {
+    background-color: rgb(48, 49, 52);
+}
+.container__table-movies th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(154, 160, 166);
+    color: rgb(32, 33, 36);
+}
+.btn-movies{
+    background-color: rgb(154, 160, 166);
+    color: rgb(32, 33, 36);
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+.btn-movies:hover{
+    background-color: rgb(32, 33, 36);
+    color: rgb(154, 160, 166);
+}
+
+/* ispis statistike - statistics.php */
+.container__table-statistics{
+    border-collapse: collapse;
+    width: 100%;
+}
+.container__table-statistics td, .container__table-statistics th {
+    border: 1px solid rgb(154, 160, 166);
+    padding: 8px;
+}
+.container__table-statistics tr:hover {
+    background-color: rgb(48, 49, 52);
+}
+.container__table-statistics th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(154, 160, 166);
+    color: rgb(32, 33, 36);
+}
+
+/*.hidden-div{
+    background-color: rgb(154, 160, 166);
+    color: rgb(48, 49, 52);
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
+    margin-left: 30%;
+    display: none;
+}*/
+
+@media only screen and (max-width: 600px) {
+    .wrapper{
+        flex-wrap: wrap;
+    }
+    .container{
+        overflow-x: auto;
+    }
+    .container__table-available-movies-search__genres{
+        margin-right: 10%;
+    }
+    .user-input{
+        width: 90%;
+    }
+    .movie-input{
+        width: 90%;
+    }
+    .modal__movie-input{
+        width: 90% !important;
+    }
+    /*.hidden-div{
+        width: 70%;
+        margin-left: 15%;
+    }*/
+    #zanr_array_id{
+        margin-left: 0% !important;
+        width: 95% !important;
+        font-size: 19px;
+    }
+  }
+@media only screen and (max-width: 859px) {
+    #zanr_array_id{
+        margin-left: 0% !important;
+        width: 100% !important;
+        font-size: 19px;
+    }
+}

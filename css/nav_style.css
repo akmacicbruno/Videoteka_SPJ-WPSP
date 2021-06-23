@@ -45,3 +45,8 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  .solid{
+    border-top: 1px solid rgb(154, 160, 166);
+    margin: 0;
+    padding: 0;
+  }

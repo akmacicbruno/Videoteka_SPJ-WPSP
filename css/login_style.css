@@ -1,0 +1,41 @@
+html{
+    display: inline-flex;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+body{
+    background-color: rgb(32, 33, 36);
+    color: rgb(154, 160, 166);
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+.login-container{
+    border: solid rgb(154, 160, 166) 1px;
+    padding: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+.login-container__title{
+    margin-bottom: 0;
+}
+.login-container__btn{
+    background-color: rgb(154, 160, 166);
+    color: rgb(32, 33, 36);
+    border: none;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+}
+.login-container__input{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: rgb(154, 160, 166);
+    border: solid 1px rgb(32, 33, 36);
+    border-radius: 10px;
+    color: rgb(32, 33, 36);
+}
