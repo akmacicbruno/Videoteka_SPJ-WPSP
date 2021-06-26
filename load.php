@@ -122,6 +122,28 @@ if (isset($_GET['json_id']))
 					break;
 					break;
 				}
+				case 'get_history':
+					{
+						$sQuery = "SELECT zapisi.id_zapis, zapisi.sifra_filma, zapisi.korisnik_id, zapisi.datum_posudivanja, zapisi.rok, zapisi.datum_vracanja, filmovi.sifra, filmovi.naziv, gledatelj.gledatelj_id, gledatelj.ime, gledatelj.prezime  FROM zapisi LEFT JOIN filmovi ON zapisi.sifra_filma=filmovi.sifra LEFT JOIN gledatelj ON zapisi.korisnik_id=gledatelj.gledatelj_id ORDER BY zapisi.datum_posudivanja";
+						$oRecord = $oConnection->query($sQuery);
+						$oZapisi = array();
+						while($oRow = $oRecord->fetch(PDO::FETCH_BOTH))
+						{
+							$zapis_id = $oRow['id_zapis'];
+							$film_id = $oRow['sifra_filma'];
+							$naziv = $oRow['naziv'];
+							$gledatelj_id = $oRow['gledatelj_id'];
+							$ime = $oRow['ime'];
+							$prezime = $oRow['prezime'];
+							$datum_posudivanja = $oRow['datum_posudivanja'];
+							$rok = $oRow['rok'];
+							$datum_vracanja = $oRow['datum_vracanja'];
+							$oZapis = new Zapis($zapis_id, $film_id, $naziv, $gledatelj_id, $ime, $prezime, $datum_posudivanja, $rok, $datum_vracanja);
+							array_push($oZapisi, $oZapis);
+						}
+						echo json_encode($oZapisi);
+						break;
+					}
 		default:
         {
             echo "Greška";
