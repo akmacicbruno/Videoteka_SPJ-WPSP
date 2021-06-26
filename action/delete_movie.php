@@ -8,4 +8,9 @@ $query->execute(array(
 	"sifra" => $data->sifra
 	)
 );
+$query1 = $oConnection->prepare("DELETE FROM zapisi WHERE sifra_filma=:sifra");
+$query1->execute(array(
+	"sifra" => $data->sifra
+	)
+);
 ?>
