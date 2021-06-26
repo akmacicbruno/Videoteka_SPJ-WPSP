@@ -11,11 +11,12 @@ $query->execute(array(
     )
 );
 
-$query1 = $oConnection->prepare("INSERT INTO zapisi (sifra_filma, korisnik_id, datum_posudivanja) VALUES (:sifra,:korisnik_id,:datum_posudivanja)");
+$query1 = $oConnection->prepare("INSERT INTO zapisi (sifra_filma, korisnik_id, datum_posudivanja, rok) VALUES (:sifra,:korisnik_id,:datum_posudivanja,:rok)");
 $query1->execute(array(
     "sifra" => $data->sifra,
     "korisnik_id" => $data->gledatelj_id,
-    "datum_posudivanja" => $data->datum_posudivanja
+    "datum_posudivanja" => $data->datum_posudivanja,
+    "rok" => $data->rok
     )
 );
 
