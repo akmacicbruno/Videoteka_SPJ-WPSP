@@ -17,6 +17,7 @@ body{
     padding: 20px;
     text-align: center;
     line-height: 30px;
+    background-color: rgb(32, 33, 36);
 }
 .login-container__title{
     margin-bottom: 0;
