@@ -37,8 +37,8 @@ if(isset($_POST["login"]))
            <meta name="viewport" content="width=device-width, initial-scale=1.0">  
            <link rel="stylesheet" href="css/login_style.css">
       </head>  
-      <body>  
-           <br />  
+      <body style="background-image: url(https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/03/13153742/RT_300EssentialMovies_700X250.jpg)">  
+      <br />  
            <div class="login-container">   
                 <h3 class="login-container__title">Prijava u sustav</h3><br/>  
                 <form method="post" autocomplete="off"> 
