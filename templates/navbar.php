@@ -13,6 +13,7 @@ if(!isset($_SESSION["username"]))
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="rented_movies.php">Posuđeni filmovi</a>
+        <a href="history.php">Zapisi</a>
         <a href="addmovie.php">Dodaj film</a>
         <a href="users.php">Svi korisnici</a>
         <a href="adduser.php">Dodaj korisnika</a>
