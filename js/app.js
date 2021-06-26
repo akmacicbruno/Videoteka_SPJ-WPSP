@@ -45,6 +45,19 @@ oFilmoviModul.controller('posudeniFilmovi', function ($scope, $http){
 	}
 })
 
+oFilmoviModul.controller('zapisiPosudivanja', function ($scope, $http){
+	$scope.oZapisi = [];
+
+	$http({
+		method : "GET",
+		url: "load.php?json_id=get_history"
+	}).then(function(response) {
+		$scope.oZapisi = response.data;
+	},function (response) {
+		console.log('Došlo je do pogreške.');
+	});
+})
+
 //users.php
 oFilmoviModul.controller('sviKorisnici', function ($scope, $http){
 	//učitavanje korisnika
@@ -72,7 +85,7 @@ oFilmoviModul.controller('sviKorisnici', function ($scope, $http){
 				}
 			}).then(function(response){
 				{
-					alert("Gledatelj je uspješno obrisan!");
+					alert(response.data);
 					location.reload();
 				}
 			});
@@ -203,6 +216,9 @@ oFilmoviModul.controller('dostupniFilmovi', function ($scope, $http){
 		var sifra = document.getElementById('rentSifra').value;
 		var gledatelj_id = OdabraniKorisnik();
 		var datum = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+		var future = new Date();
+		future.setDate(future.getDate() + 30);
+		var rok = future.toJSON().slice(0,10).replace(/-/g,'/');
 		if (!sifra || !gledatelj_id)
 		{
 			alert("Potrebno je odabrati korisnika!");
@@ -215,7 +231,8 @@ oFilmoviModul.controller('dostupniFilmovi', function ($scope, $http){
 				{
 					'sifra': sifra,
 					'gledatelj_id': gledatelj_id,
-					'datum_posudivanja': datum
+					'datum_posudivanja': datum,
+					'rok': rok
 				}
 			}).then(function(response){
 				{
