@@ -18,6 +18,7 @@ if(!isset($_SESSION["username"]))
         <a href="users.php">Svi korisnici</a>
         <a href="adduser.php">Dodaj korisnika</a>
         <a href="statistics.php">Statistika</a>
+        <a href="notify.php">Obavijest gledatelju</a>
     </div>
     <div class="navbar">
         <span class="material-icons sidenav__icon" onclick="openNav()">menu</span>
