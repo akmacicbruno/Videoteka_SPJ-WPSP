@@ -432,6 +432,27 @@ oFilmoviModul.controller('dodajFilm', function($scope, $http){
 	}
 })
 
+//notify.php
+
+oFilmoviModul.controller('obavijestGledatelju', function($scope, $http){
+	//ucitavanje u dropdown korisnike i filmove koji su posuđeni
+	$scope.oPovijest_posudeno = [];
+
+	$http({
+		method : "GET",
+		url: "load.php?json_id=get_history"
+	}).then(function(response) {
+		$scope.oPovijest_posudeno = response.data;
+	},function (response) {
+		console.log('Došlo je do pogreške.');
+	});
+
+	//posalji obavijest
+	$scope.posaljiObavijest = function(){
+		sendMail();
+	}
+})
+
 function GetSelected() {
 	//Create an Array.
 	var selected = new Array();
@@ -461,4 +482,28 @@ function GetSelected() {
 function OdabraniKorisnik(){
 	var select = document.getElementById("odabrani-korisnik").value;
 	return select;
+};
+
+function sendMail(params){
+	var future = new Date();
+	future.setDate(future.getDate() + 30);
+	var rok = future.toJSON().slice(0,10).replace(/-/g,'/');
+
+	var tempParams = {
+		to_email: document.getElementById("email").value,
+		film: document.getElementById("film").value,
+		reply_to: 'videoteka@videoteka.com',
+		to_date: rok
+	};
+
+	emailjs.send('service_ogctflo', 'template_yjat85e', tempParams)
+	.then(function(response){
+		alert("Email poruka poslana!");
+		console.log("Success: ", response.text, response.status )
+		location.reload();
+	}), function(error){
+		console.log('Neuspješno slanje: ', error);
+		location.reload();
+	}
+	
 }
