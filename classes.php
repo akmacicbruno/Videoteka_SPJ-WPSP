@@ -77,4 +77,19 @@ class Zapis
 		$this->datum_vracanja = $datum_vracanja;
 	}
 }
+class Admin
+	{
+		public $id = "";
+		public $username = "";
+		public $password = "";
+		public $created_at = "";
+
+		public function __construct ($id, $username, $password, $created_at)
+		{
+			$this->id = $id;
+			$this->username = $username;
+			$this->password = $password;
+			$this->created_at = $created_at;
+		}
+	}
 ?>
