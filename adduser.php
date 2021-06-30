@@ -34,7 +34,7 @@ if(!isset($_SESSION["username"]))
             <form autocomplete="off">
                 <div>
                     <p style="color:red;">*za uspješno dodavanje potrebno je popuniti sva polja</p>
-                    <label>Šifra:</label>
+                    <label>ID gledatelja:</label>
                     <div>
                         <input class="user-input"  id="addID" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number" maxlength = "6" autocomplete="off" placeholder=""/>
                     </div>
