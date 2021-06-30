@@ -37,8 +37,8 @@ if(!isset($_SESSION["username"]))
         <div class="notify-container">   
                 <h2 class="notify-container__title">Obavijest korisniku</h2><br/>  
                 <form method="post" autocomplete="off"> 
-                    <select type="text" id="film" class="notify-container__input" autocomplete="off" placeholder="Odaberite film">
-                        <option value="" disabled selected hidden>Odaberite film</option>
+                    <select type="text" id="film" class="notify-container__input" autocomplete="off" placeholder="">
+                        <option value="" disabled selected hidden>Odaberite film i gledatelja</option>
                         <option ng-repeat="oFil in oPovijest_posudeno" value="{{oFil.film_id}} | {{oFil.naziv}}">{{oFil.film_id}}, {{oFil.naziv}} | {{oFil.gledatelj_id}}, {{oFil.ime}} {{oFil.prezime}}</option>
                     </select>
                     <br/>
