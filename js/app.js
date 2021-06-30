@@ -440,7 +440,7 @@ oFilmoviModul.controller('obavijestGledatelju', function($scope, $http){
 
 	$http({
 		method : "GET",
-		url: "load.php?json_id=get_history"
+		url: "load.php?json_id=get_history_notify"
 	}).then(function(response) {
 		$scope.oPovijest_posudeno = response.data;
 	},function (response) {
