@@ -11,8 +11,6 @@
   width: 70%;
   height: 100%;
   overflow-x: auto;
-  
-
 }
 
 .modal-container:target {
@@ -77,6 +75,32 @@
   border: solid 1px rgb(154, 160, 166);
   border-radius: 10px;
   color: rgb(154, 160, 166);
+}
+.modal__reg{
+  text-align: center;
+}
+.modal__reg-input{
+  width: 70%;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: rgb(48, 49, 52);
+  border: solid 1px rgb(154, 160, 166);
+  border-radius: 10px;
+  color: rgb(154, 160, 166);
+}
+.modal__btn-reg{
+  width: 20%;
+  margin-left: 40%;
+  margin-bottom: 15px;
+  background-color: rgb(32, 33, 36);
+  color: rgb(154, 160, 166);
+  border: none;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px;
+  transition: .2s;
 }
 
 /* link-... */
