@@ -143,6 +143,45 @@ if (isset($_GET['json_id']))
 			echo json_encode($oZapisi);
 			break;
 		}
+		case 'get_history_notify':
+			{
+				$sQuery = "SELECT zapisi.id_zapis, zapisi.sifra_filma, zapisi.korisnik_id, zapisi.datum_posudivanja, zapisi.rok, zapisi.datum_vracanja, filmovi.sifra, filmovi.naziv, gledatelj.gledatelj_id, gledatelj.ime, gledatelj.prezime  FROM zapisi LEFT JOIN filmovi ON zapisi.sifra_filma=filmovi.sifra LEFT JOIN gledatelj ON zapisi.korisnik_id=gledatelj.gledatelj_id WHERE zapisi.datum_vracanja is null ORDER BY zapisi.datum_posudivanja";
+				$oRecord = $oConnection->query($sQuery);
+				$oZapisi = array();
+				while($oRow = $oRecord->fetch(PDO::FETCH_BOTH))
+				{
+					$zapis_id = $oRow['id_zapis'];
+					$film_id = $oRow['sifra_filma'];
+					$naziv = $oRow['naziv'];
+					$gledatelj_id = $oRow['gledatelj_id'];
+					$ime = $oRow['ime'];
+					$prezime = $oRow['prezime'];
+					$datum_posudivanja = $oRow['datum_posudivanja'];
+					$rok = $oRow['rok'];
+					$datum_vracanja = $oRow['datum_vracanja'];
+					$oZapis = new Zapis($zapis_id, $film_id, $naziv, $gledatelj_id, $ime, $prezime, $datum_posudivanja, $rok, $datum_vracanja);
+					array_push($oZapisi, $oZapis);
+				}
+				echo json_encode($oZapisi);
+				break;
+			}
+		case 'get_admins':
+			{
+				$sQuery = "SELECT *  FROM admins";
+				$oRecord = $oConnection->query($sQuery);
+				$oAdmins = array();
+				while($oRow = $oRecord->fetch(PDO::FETCH_BOTH))
+				{
+					$id = $oRow['id'];
+					$username = $oRow['username'];
+					$password = $oRow['password'];
+					$created_at = $oRow['created_at'];
+					$oAdmin = new Admin($id, $username, $password, $created_at);
+					array_push($oAdmins, $oAdmin);
+				}
+				echo json_encode($oAdmins);
+				break;
+			}
 		default:
         {
             echo "Greška";
